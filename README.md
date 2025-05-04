@@ -1,0 +1,340 @@
+<p align="center">
+  <img src="assets/banner.png" alt="GTM Skills by Explorium — prospecting, enrichment and outbound on autopilot" width="100%">
+</p>
+
+# GTM Skills for Claude Code, Codex, Cursor, Gemini, Grok & AI Agents
+
+> Open-source B2B data enrichment, prospecting, and outbound skills for **Claude Code**, **Codex**, **Cursor**, **Gemini CLI**, **GitHub Copilot**, **Grok**, **OpenCode**, **Windsurf**, **Hermes-Agent**, **OpenClaw**, **Claude Cowork**, and 60+ other agents — powered by [Explorium](https://explorium.ai) and [Vibe Prospecting](https://vibeprospecting.ai).
+
+These skills are ready-to-use playbooks that let any AI coding assistant run real GTM workflows: use as a **prospecting skill** to build prospect lists, an **enrichment skill** to enrich company and contact data, a **lead scoring skill** to tier leads, or a complete **outbound skill** for cold email and ABM campaigns — without custom tooling or agencies.
+
+Free to install, use, and adapt under the MIT license.
+
+```bash
+# Claude Code
+claude plugin marketplace add explorium-ai/gtm-skills
+claude plugin install explorium-public-skills@explorium-public-skills
+
+# Any other agent (Cursor, OpenCode, Windsurf, Cline, Goose, Kiro, ...)
+npx skills add explorium-ai/gtm-skills
+```
+
+Codex, Cursor, Gemini CLI, GitHub Copilot and Grok have native installs too. See [Supported AI Agents & Platforms](#supported-ai-agents--platforms).
+
+---
+
+## Skills
+
+| Skill | Use case | Triggers |
+|---|---|---|
+| [`lead-gen-tool-builder`](skills/lead-gen-tool-builder/SKILL.md) | Scaffold a self-hostable, ZoomInfo-style lead-gen web app — search UI + CRM push | lead generation tool, build a lead gen tool, lead gen tool skill, prospecting app, ZoomInfo alternative |
+| [`browser-extension-builder`](skills/browser-extension-builder/SKILL.md) | Scaffold a local Chrome extension that reveals LinkedIn contact info and pushes to HubSpot | Chrome extension, browser extension, Lusha alternative, Apollo.io extension clone, LinkedIn contact finder |
+| [`list-builder`](skills/list-builder/SKILL.md) | Build targeted B2B prospect lists from a natural-language ICP brief | prospecting, lead gen, find companies, build a list |
+| [`enrich-company`](skills/enrich-company/SKILL.md) | Add firmographics, technographics, funding & workforce signals to any company | B2B data enrichment, company enrichment, firmographics API |
+| [`enrich-contact`](skills/enrich-contact/SKILL.md) | Look up email, phone & LinkedIn profile for any B2B prospect | contact enrichment, email lookup, LinkedIn profile lookup |
+| [`account-fit-rank`](skills/account-fit-rank/SKILL.md) | Score & tier accounts by ICP fit, buying signals & intent data | lead scoring, account prioritization, ICP fit rank |
+| [`score-leads`](skills/score-leads/SKILL.md) | Tier inbound or outbound leads Hot/Warm/Cold against buyer personas | lead scoring, inbound scoring, CRM enrichment |
+| [`account-research`](skills/account-research/SKILL.md) | Deep intelligence briefs with firmographics, hiring & technographics | account research, company research, pre-call brief |
+| [`account-contact-shortlist`](skills/account-contact-shortlist/SKILL.md) | Ranked contact shortlists at target accounts for outbound prospecting | contact data, decision-makers, outbound |
+| [`decision-makers-map`](skills/decision-makers-map/SKILL.md) | Map buying committees — economic buyers, champions, technical evaluators | decision-makers, buying committee, multi-thread |
+| [`personalize-email`](skills/personalize-email/SKILL.md) | Assemble signal packs for personalized cold email outreach | cold email, outbound, personalization, lead gen |
+| [`competitor-research`](skills/competitor-research/SKILL.md) | Competitive intelligence briefs and side-by-side battlecards | competitor research, battlecard, competitive intelligence |
+| [`lookalike-accounts`](skills/lookalike-accounts/SKILL.md) | Find similar companies for territory expansion or TAM analysis | lookalike company, similar accounts, audience twins |
+| [`market-sizing`](skills/market-sizing/SKILL.md) | Size TAM/SAM for any ICP against Explorium's 150M+ company dataset | market sizing, TAM, ICP filters |
+| [`meeting-prep`](skills/meeting-prep/SKILL.md) | 30-minute call briefs with prospect intelligence & talking points | meeting prep, call brief, account research |
+| [`clean-data`](skills/clean-data/SKILL.md) | Validate, deduplicate & entity-match B2B company and contact records | data cleaning, entity matching, deduplication, CRM enrichment |
+| [`hubspot-enrichment-scoring`](skills/hubspot-enrichment-scoring/SKILL.md) | Enrich HubSpot companies and write ICP fit scores and tiers back as custom properties | HubSpot enrichment, CRM enrichment, ICP scoring |
+| [`contact-research`](skills/contact-research/SKILL.md) | Enrich a list of people and write a professional synopsis for each | contact research, pre-call research, attendee profiles |
+| [`cold-email-lemlist`](skills/cold-email-lemlist/SKILL.md) | Build, enrich and personalize a prospect list, then push it to a live Lemlist campaign | cold email, Lemlist, outbound sequence |
+| [`abm-campaign`](skills/abm-campaign/SKILL.md) | End-to-end ABM: ICP → enrichment → LinkedIn Ads → monitoring | ABM campaign, account-based marketing, LinkedIn Ads |
+| [`talent-sourcing`](skills/talent-sourcing/SKILL.md) | Turn a job description into a ranked, contactable pipeline of passive candidates | talent sourcing, recruiting, find candidates, talent pipeline |
+| [`talent-mapping`](skills/talent-mapping/SKILL.md) | Map the talent bench for a function across target or competitor companies, with movement signals | talent mapping, talent intelligence, market map, competitor talent |
+
+---
+
+## Why Use These GTM Skills?
+
+**B2B data enrichment for AI agents.** Most skills are built on the Vibe Prospecting MCP server — real-time access to Explorium's 150M+ company database directly inside your Claude Code, Codex, Grok, or Hermes-Agent workflow. No polling, no CSV exports, no stitching together REST calls.
+
+**Scaffold a real app, not just a list.** `lead-gen-tool-builder` is different from the workflow skills above: instead of running a prospecting task in your current session, it generates a standalone, self-hostable lead-gen web app — company & contact search, filters, CRM push — powered directly by the Explorium API, ready to deploy or hand to your team.
+
+**Or scaffold a browser extension.** `browser-extension-builder` produces a local Chrome extension in the same spirit — it reveals verified contact info right on a LinkedIn profile and pushes to HubSpot, a self-hosted alternative to Lusha or Apollo.io's extension that you load unpacked and point at your own Explorium key.
+
+**Buying signals & intent data.** Surface companies and contacts that are actively in-market. Skills like `account-fit-rank` and `score-leads` combine firmographic fit with behavioral intent signals and recent trigger events (funding, hiring surges, leadership changes, product launches).
+
+**Waterfall enrichment.** `enrich-company` and `enrich-contact` use Explorium's waterfall enrichment pipeline to maximize fill rate across email, phone, LinkedIn, technographics, and firmographics — a single skill call instead of chaining multiple data provider APIs.
+
+**Entity matching & deduplication.** `clean-data` resolves messy company names, partial domains, and duplicate contact rows before you pay to enrich them — critical for CRM enrichment workflows and inbound lead scoring.
+
+---
+
+## Supported AI Agents & Platforms
+
+Every skill lives once in `skills/<name>/SKILL.md`, in the open [Agent Skills](https://agentskills.io) format. Each tool gets a thin manifest on top (`.claude-plugin/`, `.cursor-plugin/`, `gemini-extension.json`), so all agents install the same skills. Where an agent supports plugins, the Vibe Prospecting MCP server is bundled in the same install.
+
+| Platform | Install method | Vibe Prospecting MCP |
+|---|---|---|
+| **Claude Code** | Plugin marketplace | Bundled |
+| **Codex** | Plugin marketplace (reads `.claude-plugin/`) | Bundled |
+| **Cursor** | Plugin marketplace (`.cursor-plugin/`) | Bundled |
+| **Gemini CLI** | Extension (`gemini-extension.json`) | Bundled |
+| **GitHub Copilot** (CLI and VS Code) | Plugin marketplace (reads `.claude-plugin/`) | Bundled |
+| **Grok Build** | Plugin (reads `.claude-plugin/`) | Bundled |
+| **Claude Cowork** | Plugin marketplace | Bundled |
+| **Factory Droid** | Plugin marketplace (reads `.claude-plugin/`) | Bundled |
+| **OpenCode, Windsurf, Cline, Goose, Amp, Kiro, Roo Code, Hermes-Agent, OpenClaw** and 60+ more | [`npx skills`](https://github.com/vercel-labs/skills) | [Add it yourself](#mcp-integration) |
+| **Grok Bot** | Ask the Bot to save a skill; see [Grok Bot](#grok-bot) | Connect it yourself |
+| **n8n** | — | See [MCP Integration](#mcp-integration) |
+
+### Claude Code
+
+```bash
+claude plugin marketplace add explorium-ai/gtm-skills
+claude plugin install explorium-public-skills@explorium-public-skills
+```
+
+Inside a session you can do the same with `/plugin marketplace add explorium-ai/gtm-skills`.
+
+### Codex
+
+```bash
+codex plugin marketplace add explorium-ai/gtm-skills
+codex plugin add explorium-public-skills@explorium-public-skills
+```
+
+Start a new Codex session afterwards. `/plugins` in the TUI browses the same marketplace.
+
+### Cursor
+
+In Cursor, open **Customize**, choose **From GitHub Repository**, and paste `https://github.com/explorium-ai/gtm-skills`. From the CLI:
+
+```bash
+agent plugin marketplace add https://github.com/explorium-ai/gtm-skills
+```
+
+### Gemini CLI
+
+```bash
+gemini extensions install https://github.com/explorium-ai/gtm-skills
+```
+
+### GitHub Copilot
+
+```bash
+copilot plugin marketplace add explorium-ai/gtm-skills
+copilot plugin install explorium-public-skills@explorium-public-skills
+```
+
+In VS Code, run **Chat: Install Plugin From Source** and paste `https://github.com/explorium-ai/gtm-skills`.
+
+### Grok Build
+
+```bash
+grok plugin install explorium-ai/gtm-skills --trust
+```
+
+See [Use These Skills in Grok](#use-these-skills-in-grok) for other options and Grok Bot.
+
+### Claude Cowork
+
+**Customize → Plugins → Add marketplace**, then enter `explorium-ai/gtm-skills`.
+
+### Factory Droid
+
+```bash
+droid plugin marketplace add explorium-ai/gtm-skills
+droid plugin install explorium-public-skills@explorium-public-skills
+```
+
+### Any other agent
+
+The [`skills` CLI](https://github.com/vercel-labs/skills) installs `SKILL.md` skills into 70+ agents, including OpenCode, Windsurf, Cline, Goose, Amp, Kiro, Roo Code, Hermes-Agent and OpenClaw:
+
+```bash
+npx skills add explorium-ai/gtm-skills                         # choose agents interactively
+npx skills add explorium-ai/gtm-skills -a opencode -g          # one agent, user-wide
+npx skills add explorium-ai/gtm-skills --skill list-builder    # one skill only
+```
+
+This installs the skills only. Add the Vibe Prospecting MCP server to your agent as well; see [MCP Integration](#mcp-integration).
+
+---
+
+## Use These Skills in Grok
+
+These are **GTM skills for Grok** — the same prospecting, enrichment, lead scoring and outbound skills, running inside xAI's Grok instead of Claude Code. Nothing in this repo needs to change: Grok reads the Agent Skills (`SKILL.md`) format natively.
+
+### Grok Build (Grok CLI)
+
+[Grok Build](https://docs.x.ai/build/overview) is xAI's agentic coding CLI. It is [fully Claude Code compatible with zero configuration](https://docs.x.ai/build/features/skills-plugins-marketplaces) — it automatically reads Claude Code skills, plugins, marketplaces, MCP servers and instruction files alongside its own `.grok/` directory. So this repo works in Grok exactly as it works in Claude Code.
+
+```bash
+curl -fsSL https://x.ai/cli/install.sh | bash
+```
+
+**Already using these skills in Claude Code?** You are done — Grok reads your existing Claude Code skills, plugins, marketplaces and MCP servers automatically. Run `grok inspect` to see them listed.
+
+**Installing standalone?** Install the repo as a Grok plugin. This brings in all the skills and the Vibe Prospecting MCP server:
+
+```bash
+grok plugin install explorium-ai/gtm-skills --trust
+grok inspect   # confirm the skills and MCP server were discovered
+```
+
+**Prefer plain skill folders?** Clone the repo and point Grok's skill path at its `skills/` directory:
+
+```bash
+# 1. Clone anywhere you like
+git clone https://github.com/explorium-ai/gtm-skills.git ~/.grok/gtm-skills
+
+# 2. Register the skills directory in ~/.grok/config.toml
+cat >> ~/.grok/config.toml <<'EOF'
+
+[skills]
+paths = ["~/.grok/gtm-skills/skills"]
+EOF
+
+# 3. Confirm Grok discovered them
+grok inspect
+```
+
+Each skill lives in its own folder under `skills/`, so pointing at the parent directory exposes all of them at once.
+
+Then run any skill as a slash command in a Grok session:
+
+```
+/list-builder Find 50 Series B SaaS companies in the US with 50-200 employees using Salesforce
+/enrich-company Add firmographics, tech stack, and funding to these 200 accounts
+/account-fit-rank Which of these 100 accounts has the strongest buying signals right now?
+```
+
+Grok discovers skills from `./.grok/skills/` (walked up to the repo root), `~/.grok/skills/`, any enabled plugin's `skills/` directory, and extra paths under `[skills] paths` in `~/.grok/config.toml`. To scope the skills to one project instead of your whole machine, symlink the folders you want into that repo's `./.grok/skills/` — for example `ln -s ~/.grok/gtm-skills/skills/list-builder .grok/skills/list-builder`.
+
+You can also wire up the underlying B2B data directly as an MCP server:
+
+```bash
+grok mcp add --transport http vibe-prospecting https://vibeprospecting.explorium.ai/mcp
+```
+
+Or add it to `~/.grok/config.toml` by hand:
+
+```toml
+[mcp_servers.vibe-prospecting]
+url = "https://vibeprospecting.explorium.ai/mcp"
+```
+
+Run `grok inspect` to see every loaded MCP server and where it came from, or `grok mcp doctor` if the server isn't working.
+
+### Grok Bot
+
+[Grok Bot](https://docs.x.ai/grok-bot/overview) gives you persistent AI teammates that run on a cloud computer with a browser, filesystem and terminal — a natural home for recurring GTM work.
+
+These skills are not listed in the Grok Bot **Marketplace** yet. Grok Bot can [create a skill from written instructions](https://docs.x.ai/grok-bot/skills-routines-and-automations), and each `SKILL.md` here is exactly that, so ask your Bot to save one:
+
+```
+Clone https://github.com/explorium-ai/gtm-skills and save skills/list-builder/SKILL.md as a skill called "list-builder".
+```
+
+Then type `/` in the composer to reference the saved skill. If it doesn't appear, check **Marketplace → Your plugins → Manage plugins and skills → Private skills**. The skills call the Vibe Prospecting MCP server, so connect it to the Bot as well.
+
+Because Grok Bot also supports **routines** — a skill on a schedule — these skills fit recurring revenue workflows well:
+
+- `/account-fit-rank` every Monday at 8:00 to re-score your pipeline against fresh buying signals
+- `/score-leads` on the week's inbound MQLs, posted as a Hot/Warm/Cold watch list
+- `/meeting-prep` each morning against tomorrow's calendar, so every call has a brief
+- `/enrich-company` on new CRM rows, so records never go stale
+
+### Which Grok product do I need?
+
+| | Grok Build | Grok Bot |
+|---|---|---|
+| What it is | Agentic coding CLI in your terminal | Persistent AI teammates on a cloud computer |
+| Best for | Running GTM skills against your own repo, data and scripts | Scheduled, recurring GTM workflows and team-shared skills |
+| Skill format | `SKILL.md` — reads `.grok/skills/` **and** Claude Code skills | Saved (private) skills + routines |
+| Install these skills | `grok plugin install explorium-ai/gtm-skills --trust` | Ask the Bot to save each `SKILL.md` as a skill |
+
+---
+
+## GTM Use Cases
+
+### Prospecting & Lead Generation
+
+Use `list-builder` to turn a natural-language ICP description into a filtered list of target companies and contacts. Combine with `lookalike-accounts` to expand from a seed customer list, and `account-fit-rank` to rank by real-time buying signals before handing off to outbound.
+
+```
+/list-builder Find 50 Series B SaaS companies in the US with 50-200 employees using Salesforce
+/lookalike-accounts Find companies similar to Notion and Figma for my AE territory
+/account-fit-rank Score this account list by ICP fit and buying intent
+```
+
+### Build Your Own Lead Gen Tool
+
+Want a lead-gen tool your whole team can use, not just a one-off list? Use
+`lead-gen-tool-builder` to scaffold a complete, self-hostable, ZoomInfo-style
+web app — company & contact search, firmographic and technographic filters, a
+sortable results table, CSV import/export, and one-click push to HubSpot and
+Salesforce — powered by the Explorium API. It's the fastest way to build a lead
+generation tool, a self-hosted ZoomInfo or Apollo.io alternative, or an
+internal prospecting app without hiring an agency or writing the data-layer
+integration by hand.
+
+```
+/lead-gen-tool-builder Build me a lead gen tool with Explorium search and HubSpot push
+/lead-gen-tool-builder Scaffold a ZoomInfo-style prospecting app I can self-host for my team
+```
+
+### Build Your Own Browser Extension
+
+Want the Lusha/Apollo.io experience — reveal a contact right on their LinkedIn
+profile — without the per-seat license? Use `browser-extension-builder` to
+scaffold a local Chrome extension that detects any LinkedIn profile, reveals a
+verified email/phone/job title via Explorium, and pushes the contact to
+HubSpot (with an editable field-mapping review) or drafts a Gmail message.
+It's a vanilla Manifest V3 extension — no build step, no framework — loaded
+via `chrome://extensions` → **Load unpacked**, so it's easy to restyle to
+match any brand's design system on request.
+
+```
+/browser-extension-builder Build me a Lusha-style Chrome extension powered by Explorium
+/browser-extension-builder Clone the Apollo.io extension but push to HubSpot with my own key
+```
+
+### Outbound & Cold Email
+
+Use `personalize-email` to assemble intent-led signal packs for each prospect — recent funding, hiring trends, tech stack, LinkedIn activity — so your AI can write truly personalized outbound at scale. `account-contact-shortlist` surfaces the right decision-makers with verified contact data.
+
+```
+/personalize-email Build a personalization brief for the VP of Sales at Acme Corp
+/account-contact-shortlist Get me the top 5 contacts at Stripe for an outbound sequence
+```
+
+### CRM Enrichment
+
+`enrich-company` and `enrich-contact` drop directly into CRM enrichment workflows: pass a list of domains or emails, get back firmographics, technographics, funding stage, headcount, and verified contact info. `clean-data` normalizes and deduplicates records first so you only pay to enrich real rows.
+
+```
+/enrich-company Add firmographics, tech stack, and funding to these 200 accounts
+/clean-data Validate and deduplicate this Salesforce export before enrichment
+/score-leads Tier these 500 inbound MQLs against my ICP — Hot, Warm, or Cold
+```
+
+### Buying Signals & Intent Data
+
+`account-fit-rank` surfaces buying signals across all accounts simultaneously: funding rounds, leadership hires, headcount growth, technology adoption, and behavioral intent topics. Use it before every outbound sequence to prioritize who to call first.
+
+```
+/account-fit-rank Which of these 100 accounts has the strongest buying signals right now?
+```
+
+### Account Research & Competitive Intelligence
+
+`account-research` generates a full intelligence brief — firmographics, recent hires, technology stack, funding history, and news — in seconds. `competitor-research` builds side-by-side battlecards from the same real-time data.
+
+```
+/account-research Give me a pre-call brief on Salesforce before my meeting Thursday
+/competitor-research Build a battlecard comparing HubSpot vs Salesforce for our sales team
+```
+
+### Talent Sourcing & Recruiting
+
+`talent-mapping` sizes the bench for a function across competitor or target companies an
