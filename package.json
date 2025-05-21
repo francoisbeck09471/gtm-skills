@@ -1,0 +1,10 @@
+{
+  "name": "gtm-skills",
+  "version": "0.1.0",
+  "description": "GTM Skills for Claude & Codex",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
