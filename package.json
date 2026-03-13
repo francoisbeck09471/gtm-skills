@@ -1,6 +1,6 @@
 {
   "name": "gtm-skills",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "GTM Skills for Claude & Codex",
   "main": "src/index.ts",
   "scripts": {
